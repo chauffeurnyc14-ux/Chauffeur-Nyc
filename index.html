@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChauffeurNYC | Elite Luxury Chauffeur Service New York</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-bg theme-text">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500">
+        <div class="logo-container">
+            <a href="#" class="flex items-center">
+                <img src="WhatsApp Image 2026-04-23 at 01.14.37.jpeg" alt="ChauffeurNYC Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <div class="hidden lg:flex items-center gap-14 ml-auto nav-links">
+            <a href="#about" class="text-[10px] uppercase tracking-[0.4em] font-semibold transition-colors">Philosophy</a>
+            <a href="#fleet" class="text-[10px] uppercase tracking-[0.4em] font-semibold transition-colors">The Fleet</a>
+            <a href="#presence" class="text-[10px] uppercase tracking-[0.4em] font-semibold transition-colors">NYC Presence</a>
+            
+            <!-- Theme Toggle -->
+            <div class="theme-toggle-container">
+                <button id="theme-btn" class="theme-btn">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <span class="text-[9px] uppercase tracking-[0.4em] font-bold">Theme</span>
+                </button>
+                <div id="theme-menu" class="theme-menu">
+                    <div class="theme-option" data-theme="system">System Default</div>
+                    <div class="theme-option" data-theme="dark">Dark Mode 🌙</div>
+                    <div class="theme-option" data-theme="light">Light Mode ☀️</div>
+                </div>
+            </div>
+
+            <!-- Navbar Phone Number -->
+            <a href="https://wa.me/19292637593" target="_blank" class="hidden md:flex items-center gap-2 theme-text-heading hover:opacity-70 transition-opacity">
+                <i class="fa-solid fa-phone text-[10px] opacity-40"></i>
+                <span class="text-[11px] font-bold tracking-[0.2em]">+1 (929) 263-7593</span>
+            </a>
+
+            <a href="https://wa.me/19292637593" target="_blank" class="ml-4 px-9 py-3.5 border theme-border theme-text-heading text-[9px] uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all duration-500 font-bold">Contact</a>
+        </div>
+        
+        <button id="menu-btn" class="lg:hidden text-xl opacity-80 ml-auto theme-text relative z-[101]">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay">
+        <a href="#" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">Philosophy</a>
+        <a href="#fleet" class="mobile-nav-link">The Fleet</a>
+        <a href="#presence" class="mobile-nav-link">NYC Presence</a>
+        <a href="https://wa.me/19292637593" target="_blank" class="mobile-nav-link">Contact</a>
+        
+        <!-- Mobile Phone Link -->
+        <a href="https://wa.me/19292637593" target="_blank" class="mt-4 theme-text-heading text-[12px] font-bold tracking-[0.2em]">+1 (929) 263-7593</a>
+        
+        <!-- Mobile Theme Toggle -->
+        <div class="mt-8 flex gap-6">
+            <button class="mobile-theme-option text-[10px] uppercase tracking-[0.3em] opacity-60" data-theme="dark">Dark 🌙</button>
+            <button class="mobile-theme-option text-[10px] uppercase tracking-[0.3em] opacity-60" data-theme="light">Light ☀️</button>
+            <button class="mobile-theme-option text-[10px] uppercase tracking-[0.3em] opacity-60" data-theme="system">System</button>
+        </div>
+    </div>
+
+    <!-- Hero Section Redesign: Brand Dominance -->
+    <section class="hero-section theme-bg">
+        <!-- Background Video with Overlay -->
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="WhatsApp Video 2026-04-23 at 01.14.37.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay-split"></div>
+            <div class="hero-horizontal-streak"></div>
+        </div>
+        
+        <div class="hero-content-grid">
+            <!-- Left Side: Brand Identity -->
+            <div class="hero-left" data-aos="fade-right" data-aos-duration="1500">
+                <div class="logo-highlight-wrapper">
+                    <img src="WhatsApp Image 2026-04-23 at 01.14.37.jpeg" alt="ChauffeurNYC" class="hero-logo-large">
+                </div>
+                
+                <div class="hero-text-content">
+                    <span class="hero-label">Luxury Chauffeur Service</span>
+                    <h1 class="hero-title-main">
+                        <span class="elite">The Elite Choice</span>
+                        <span class="ny">In New York</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Premium rides. Professional chauffeurs. <br>
+                        An uncompromising standard of excellence for New York's elite clientele.
+                    </p>
+                    
+                    <div class="flex gap-8">
+                        <button class="btn-premium btn-glow" onclick="document.getElementById('fleet').scrollIntoView()">View Fleet</button>
+                        <button class="btn-premium border-white/20 btn-glow" onclick="document.getElementById('presence').scrollIntoView()">Our Presence</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Secure Booking -->
+            <div class="hero-right" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200">
+                <div class="booking-card-matte">
+                    <h3 class="theme-text-heading">Secure Your Journey</h3>
+                    <form id="hero-booking" class="space-y-7">
+                        <div class="space-y-3">
+                            <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Full Name</label>
+                            <input type="text" id="booking-name" placeholder="John Doe" required class="form-input w-full p-4">
+                        </div>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-3">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Phone Number</label>
+                                <input type="tel" id="booking-phone" placeholder="+1 (212) 000-0000" required class="form-input w-full p-4">
+                            </div>
+                            <div class="space-y-3">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Email Address</label>
+                                <input type="email" id="booking-email" placeholder="john@example.com" required class="form-input w-full p-4">
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-end">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Pickup Location</label>
+                                <button type="button" id="get-location" class="text-[8px] uppercase tracking-[0.2em] theme-text-muted hover:theme-text transition-colors flex items-center gap-1 mb-1">
+                                    <i class="fa-solid fa-location-dot"></i> Use My Current Location
+                                </button>
+                            </div>
+                            <input type="text" id="booking-pickup" placeholder="e.g. JFK Terminal 4" required class="form-input w-full p-4">
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Destination</label>
+                            <input type="text" id="booking-destination" placeholder="e.g. The Plaza Hotel" required class="form-input w-full p-4">
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Total Rental Hours</label>
+                            <input type="text" id="booking-hours" placeholder="Enter Total Rental Hours" required class="form-input w-full p-4">
+                        </div>
+                        
+                        <!-- Pickup Schedule Split -->
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-3">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Pickup Date</label>
+                                <input type="date" id="booking-pickup-date" required class="form-input w-full p-4">
+                            </div>
+                            <div class="space-y-3">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Pickup Time</label>
+                                <input type="time" id="booking-pickup-time" required class="form-input w-full p-4">
+                            </div>
+                        </div>
+
+                        <!-- Drop-off Schedule Split -->
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-3">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Drop-off Date</label>
+                                <input type="date" id="booking-dropoff-date" required class="form-input w-full p-4">
+                            </div>
+                            <div class="space-y-3">
+                                <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Drop-off Time</label>
+                                <input type="time" id="booking-dropoff-time" required class="form-input w-full p-4">
+                            </div>
+                        </div>
+
+                        <!-- Custom Fleet Multi-Select -->
+                        <div class="space-y-3 relative">
+                            <label class="block text-[9px] uppercase tracking-[0.4em] theme-text-muted">Selected Fleet(s)</label>
+                            <div class="custom-fleet-dropdown" id="fleet-multi-select">
+                                <div class="dropdown-trigger form-input w-full p-4 flex justify-between items-center cursor-pointer">
+                                    <span id="selected-fleet-text">▼ Select Fleet(s)</span>
+                                </div>
+                                <div class="dropdown-menu hidden absolute left-0 w-full mt-2 theme-surface-matte border border-white/10 z-[100] max-h-60 overflow-y-auto p-4 space-y-3 shadow-2xl">
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input type="checkbox" value="Mercedes S-Class Long Wheelbase" class="fleet-checkbox w-4 h-4 rounded-none border-white/20 bg-black accent-white">
+                                        <span class="text-[10px] uppercase tracking-widest theme-text-muted group-hover:theme-text-heading transition-opacity">Mercedes S-Class Long Wheelbase</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input type="checkbox" value="Cadillac Escalade Platinum" class="fleet-checkbox w-4 h-4 rounded-none border-white/20 bg-black accent-white">
+                                        <span class="text-[10px] uppercase tracking-widest theme-text-muted group-hover:theme-text-heading transition-opacity">Cadillac Escalade Platinum</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input type="checkbox" value="Maybach Truck" class="fleet-checkbox w-4 h-4 rounded-none border-white/20 bg-black accent-white">
+                                        <span class="text-[10px] uppercase tracking-widest theme-text-muted group-hover:theme-text-heading transition-opacity">Maybach Truck</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input type="checkbox" value="Lamborghini Urus" class="fleet-checkbox w-4 h-4 rounded-none border-white/20 bg-black accent-white">
+                                        <span class="text-[10px] uppercase tracking-widest theme-text-muted group-hover:theme-text-heading transition-opacity">Lamborghini Urus</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input type="checkbox" value="McLaren 720S (only for photo shoot)" class="fleet-checkbox w-4 h-4 rounded-none border-white/20 bg-black accent-white">
+                                        <span class="text-[10px] uppercase tracking-widest theme-text-muted group-hover:theme-text-heading transition-opacity">McLaren 720S (only for photo shoot)</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group">
+                                        <input type="checkbox" value="Ferrari Roma (only for photo shoot)" class="fleet-checkbox w-4 h-4 rounded-none border-white/20 bg-black accent-white">
+                                        <span class="text-[10px] uppercase tracking-widest theme-text-muted group-hover:theme-text-heading transition-opacity">Ferrari Roma (only for photo shoot)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-gray-200 transition-all duration-500">
+                            Book Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Philosophy -->
+    <section id="about" class="py-40 px-6 theme-bg">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <span class="text-[10px] uppercase tracking-[0.5em] theme-text-muted mb-10 block">The Standard</span>
+            <h2 class="text-3xl md:text-5xl font-light italic serif leading-tight mb-12 theme-text-heading">
+                "We provide more than just transportation; we deliver an uncompromising standard of service for New York's elite."
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mt-24">
+                <div>
+                    <span class="block text-2xl font-bold mb-2 theme-text-heading">Elite</span>
+                    <span class="text-[9px] uppercase tracking-widest theme-text-muted">Chauffeurs</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-bold mb-2 theme-text-heading">24/7</span>
+                    <span class="text-[9px] uppercase tracking-widest theme-text-muted">Concierge</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-bold mb-2 theme-text-heading">VIP</span>
+                    <span class="text-[9px] uppercase tracking-widest theme-text-muted">Security</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-bold mb-2 theme-text-heading">Quiet</span>
+                    <span class="text-[9px] uppercase tracking-widest theme-text-muted">Luxury</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Showcase -->
+    <section id="fleet" class="py-40 theme-surface-section">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-24" data-aos="fade-up">
+                <span class="text-[10px] uppercase tracking-[0.5em] opacity-30 mb-4 block">The Collection</span>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight theme-text-heading">The Fleet</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Vehicle 1: Mercedes S-Class Long Wheelbase -->
+                <div class="fleet-card group h-full flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-container relative aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1200&auto=format&fit=crop" alt="Mercedes S-Class Long Wheelbase" class="w-full h-full object-cover opacity-100 transition-all duration-700">
+                        <div class="absolute top-4 right-4">
+                            <span class="tag-requested uppercase text-[9px] font-bold tracking-widest px-3 py-1 border border-white/10 bg-black/40 backdrop-blur-md">Executive Elite</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 uppercase tracking-widest theme-text-heading">Mercedes S-Class Long Wheelbase</h4>
+                            <p class="text-[10px] theme-text-muted leading-loose tracking-widest uppercase mb-8">Quiet Luxury • 3 Passengers • Executive</p>
+                        </div>
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[9px] uppercase tracking-[0.3em] border-b border-white/10 pb-2 hover:border-white/40 transition-all theme-text self-start">Inquiry</a>
+                    </div>
+                </div>
+                
+                <!-- Vehicle 2: Cadillac Escalade Platinum -->
+                <div class="fleet-card group h-full flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-container relative aspect-[16/10] overflow-hidden">
+                        <img src="Cadallica.jpeg" alt="Cadillac Escalade Platinum" class="w-full h-full object-cover opacity-100 transition-all duration-700">
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 uppercase tracking-widest theme-text-heading">Cadillac Escalade Platinum</h4>
+                            <p class="text-[10px] theme-text-muted leading-loose tracking-widest uppercase mb-8">Commanding Presence • 6 Passengers • SUV</p>
+                        </div>
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[9px] uppercase tracking-[0.3em] border-b border-white/10 pb-2 hover:border-white/40 transition-all theme-text self-start">Inquiry</a>
+                    </div>
+                </div>
+                
+                <!-- Vehicle 3: Maybach Truck -->
+                <div class="fleet-card group h-full flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img-container relative aspect-[16/10] overflow-hidden">
+                        <img src="maybach image.jpeg" alt="Maybach Truck" class="w-full h-full object-cover opacity-100 transition-all duration-700">
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 uppercase tracking-widest theme-text-heading">Maybach Truck</h4>
+                            <p class="text-[10px] theme-text-muted leading-loose tracking-widest uppercase mb-8">Prestige Reimagined • 4 Passengers • VIP</p>
+                        </div>
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[9px] uppercase tracking-[0.3em] border-b border-white/10 pb-2 hover:border-white/40 transition-all theme-text self-start">Inquiry</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4: Lamborghini Urus -->
+                <div class="fleet-card group h-full flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-container relative aspect-[16/10] overflow-hidden">
+                        <img src="URUS.jpeg" alt="Lamborghini Urus" class="w-full h-full object-cover opacity-100 transition-all duration-700">
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 uppercase tracking-widest theme-text-heading">Lamborghini Urus</h4>
+                            <p class="text-[10px] theme-text-muted leading-loose tracking-widest uppercase mb-8">Super SUV • 4 Passengers • Performance</p>
+                        </div>
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[9px] uppercase tracking-[0.3em] border-b border-white/10 pb-2 hover:border-white/40 transition-all theme-text self-start">Inquiry</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 5: McLaren 720S -->
+                <div class="fleet-card group h-full flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-container relative aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=1200&auto=format&fit=crop" alt="McLaren 720S" class="w-full h-full object-cover opacity-100 transition-all duration-700">
+                        <div class="absolute bottom-4 left-4">
+                            <span class="tag-requested uppercase text-[8px] font-bold tracking-widest px-2 py-1 bg-white text-black">Photo Shoot Only</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 uppercase tracking-widest theme-text-heading">McLaren 720S</h4>
+                            <p class="text-[10px] theme-text-muted leading-loose tracking-widest uppercase mb-8">Aerodynamic Excellence • Cinema & Photo</p>
+                        </div>
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[9px] uppercase tracking-[0.3em] border-b border-white/10 pb-2 hover:border-white/40 transition-all theme-text self-start">Inquiry</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 6: Ferrari Roma -->
+                <div class="fleet-card group h-full flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img-container relative aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=1200&auto=format&fit=crop" alt="Ferrari Roma" class="w-full h-full object-cover opacity-100 transition-all duration-700">
+                        <div class="absolute bottom-4 left-4">
+                            <span class="tag-requested uppercase text-[8px] font-bold tracking-widest px-2 py-1 bg-white text-black">Photo Shoot Only</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 uppercase tracking-widest theme-text-heading">Ferrari Roma</h4>
+                            <p class="text-[10px] theme-text-muted leading-loose tracking-widest uppercase mb-8">La Nuova Dolce Vita • Cinema & Photo</p>
+                        </div>
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[9px] uppercase tracking-[0.3em] border-b border-white/10 pb-2 hover:border-white/40 transition-all theme-text self-start">Inquiry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NYC Presence / Instagram Showcase -->
+    <section id="presence" class="py-40 theme-bg">
+        <div class="max-w-7xl mx-auto px-6 mb-20 flex justify-between items-end">
+            <div data-aos="fade-right">
+                <span class="text-[10px] uppercase tracking-[0.5em] theme-text-muted mb-4 block">Visual Identity</span>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight theme-text-heading">NYC Presence</h2>
+            </div>
+            <a href="https://www.instagram.com/chauffeurnyc/" target="_blank" class="text-[10px] uppercase tracking-[0.4em] theme-text-muted hover:theme-text transition-opacity mb-2">Follow @ChauffeurNYC</a>
+        </div>
+        
+        <div class="horizontal-scroll gap-4 px-6 md:px-[calc((100vw-1280px)/2)]">
+            <!-- NEW PRESENCE Material -->
+            <div class="item w-80 md:w-[450px]">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="PRESENCE material/maybachvedio.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/merce image.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="PRESENCE material/merce vedio.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="PRESENCE material/mercedes vedio.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- PRESENCE Material: Video -->
+            <div class="item w-80 md:w-[450px]">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                    <source src="PRESENCE material/WhatsApp Video 2026-05-19 at 11.35.20 AM.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- PRESENCE Material: Images -->
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.34.46 AM (1).jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.34.46 AM.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.34.47 AM (1).jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.34.47 AM.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.17 AM.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.18 AM (1).jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.18 AM.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.19 AM (1).jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.19 AM (2).jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.19 AM.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.20 AM (1).jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+            <div class="item w-80 md:w-[450px]">
+                <img src="PRESENCE material/WhatsApp Image 2026-05-19 at 11.35.20 AM.jpeg" alt="ChauffeurNYC Presence" class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-12 text-center">
+            <p class="text-[10px] uppercase tracking-[0.6em] theme-text-muted-more">Serving New York City in Style</p>
+        </div>
+    </section>
+
+    <!-- Contact / Inquiry -->
+    <section id="contact" class="py-40 theme-surface-section border-t theme-border">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24">
+            <div data-aos="fade-right">
+                <h2 class="text-5xl md:text-7xl font-bold mb-12 theme-text-heading">Arrive<br><span class="opacity-20">Elite.</span></h2>
+                <div class="space-y-12">
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-[0.4em] theme-text-muted mb-4">Contact Concierge</span>
+                        <a href="tel:+19292637593" class="text-3xl font-light hover:opacity-60 transition-colors theme-text-heading">+1 (929) 263-7593</a>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <div class="space-y-12">
+                    <p class="text-lg theme-text-muted leading-relaxed italic serif">
+                        "For those who value discretion, punctuality, and the finer details of travel. We are available 24/7 for airport transfers, corporate travel, and special events across the tri-state area."
+                    </p>
+                    <div class="flex flex-wrap gap-10">
+                        <a href="https://wa.me/19292637593" target="_blank" class="text-[11px] uppercase tracking-[0.4em] font-bold border-b theme-border pb-2 transition-all hover:pb-4 theme-text-heading">WhatsApp</a>
+                        <a href="https://www.instagram.com/chauffeurnyc/" target="_blank" class="text-[11px] uppercase tracking-[0.4em] font-bold border-b theme-border pb-2 transition-all hover:pb-4 theme-text-heading">Instagram</a>
+                        <a href="https://www.instagram.com/p/DUwBxqwjybR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="text-[11px] uppercase tracking-[0.4em] font-bold border-b theme-border pb-2 transition-all hover:pb-4 theme-text-heading">Customer Reviews</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 theme-bg text-center border-t theme-border">
+        <img src="WhatsApp Image 2026-04-23 at 01.14.37.jpeg" alt="ChauffeurNYC" class="h-16 w-auto mx-auto opacity-20 mb-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <span class="text-[9px] uppercase tracking-[0.4em] theme-text-muted">© 2026 ChauffeurNYC • Manhattan, NY</span>
+            <div class="flex gap-12 text-[9px] uppercase tracking-[0.4em]">
+                <a href="#" class="theme-text-muted hover:theme-text transition-colors">Privacy</a>
+                <a href="#" class="theme-text-muted hover:theme-text transition-colors">Terms</a>
+                <a href="#" class="theme-text-muted hover:theme-text transition-colors">Fleet Details</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
