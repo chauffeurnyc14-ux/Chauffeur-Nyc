@@ -278,12 +278,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const hours = document.getElementById('booking-hours').value;
             const pDate = document.getElementById('booking-pickup-date').value;
             const pTime = document.getElementById('booking-pickup-time').value;
-            const dDate = document.getElementById('booking-dropoff-date').value;
-            const dTime = document.getElementById('booking-dropoff-time').value;
 
             // Format WhatsApp Message
             const fleetList = selectedVehicles.map(v => `• ${v}`).join('\n');
-            const message = `*NEW BOOKING REQUEST - CHAUFFEURNYC*\n\n👤 Name:\n${name}\n\n📞 Phone:\n${phone}\n\n📧 Email:\n${email}\n\n📍 Pickup Location:\n${pickup}\n\n🏁 Destination:\n${destination}\n\n⏱ Total Rental Hours:\n${hours}\n\n📅 Pickup Schedule:\n${pDate} at ${pTime}\n\n⏳ Drop-off Schedule:\n${dDate} at ${dTime}\n\n🚗 Selected Fleet(s):\n\n${fleetList}`;
+            const message = `*NEW BOOKING REQUEST - CHAUFFEURNYC*\n\n👤 Name:\n${name}\n\n📞 Phone:\n${phone}\n\n📧 Email:\n${email}\n\n📍 Pickup Location:\n${pickup}\n\n🏁 Destination:\n${destination}\n\n⏱ Total Rental Hours:\n${hours}\n\n📅 Pickup Schedule:\n${pDate} at ${pTime}\n\n🚗 Selected Fleet(s):\n\n${fleetList}`;
 
             // Define target (19292637593)
             const whatsappNumber = "19292637593"; 
