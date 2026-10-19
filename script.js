@@ -150,68 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- THEME SYSTEM ---
-    const themeBtn = document.getElementById('theme-btn');
-    const themeMenu = document.getElementById('theme-menu');
-    const themeOptions = document.querySelectorAll('.theme-option, .mobile-theme-option');
-
-    const getPreferredTheme = () => {
-        const saved = localStorage.getItem('theme');
-        if (saved) return saved;
-        return 'system';
-    };
-
-    const applyTheme = (theme) => {
-        let actualTheme = theme;
-        if (theme === 'system') {
-            actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        document.documentElement.setAttribute('data-theme', actualTheme);
-        
-        // Update active class in menu
-        themeOptions.forEach(opt => {
-            if (opt.getAttribute('data-theme') === theme) {
-                opt.classList.add('active');
-                opt.style.opacity = '1';
-            } else {
-                opt.classList.remove('active');
-                opt.style.opacity = opt.classList.contains('mobile-theme-option') ? '0.6' : '';
-            }
-        });
-    };
-
-    // Initialize
-    applyTheme(getPreferredTheme());
-
-    // Toggle Menu
-    if (themeBtn) {
-        themeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            themeMenu.classList.toggle('active');
-        });
+    // Clean up any legacy theme selection in localStorage
+    try {
+        localStorage.removeItem('theme');
+    } catch (e) {
+        // Storage access handled gracefully
     }
-
-    // Handle Option Selection
-    themeOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const theme = option.getAttribute('data-theme');
-            localStorage.setItem('theme', theme);
-            applyTheme(theme);
-            if (themeMenu) themeMenu.classList.remove('active');
-        });
-    });
-
-    // Close menu on click outside
-    document.addEventListener('click', () => {
-        if (themeMenu) themeMenu.classList.remove('active');
-    });
-
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if (getPreferredTheme() === 'system') {
-            applyTheme('system');
-        }
-    });
 
     // Custom Fleet Multi-Select Dropdown Logic
     const fleetDropdown = document.getElementById('fleet-multi-select');
