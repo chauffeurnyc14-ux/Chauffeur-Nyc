@@ -233,8 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
             setTimeout(() => {
-                // Open WhatsApp in new tab
-                window.open(whatsappUrl, '_blank');
+                // Open WhatsApp in new tab securely
+                const newWin = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                if (newWin) newWin.opener = null;
                 
                 // UI state recovery
                 btn.innerText = originalText;

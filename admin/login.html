@@ -28,14 +28,38 @@
     </div>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', (e) => {
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const pass = document.getElementById('password').value;
-            if (pass === 'admin123') {
-                localStorage.setItem('admin_pass', pass);
-                window.location.href = '/admin/dashboard';
-            } else {
-                document.getElementById('error-msg').classList.remove('hidden');
+            const passInput = document.getElementById('password');
+            const pass = passInput.value;
+            const errorMsg = document.getElementById('error-msg');
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+
+            errorMsg.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Verifying...';
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pass })
+                });
+                const data = await res.json();
+
+                if (res.ok && data.success) {
+                    localStorage.setItem('admin_pass', pass);
+                    window.location.href = '/admin/dashboard';
+                } else {
+                    errorMsg.textContent = data.error || 'Invalid password';
+                    errorMsg.classList.remove('hidden');
+                }
+            } catch (err) {
+                errorMsg.textContent = 'Connection error. Please try again.';
+                errorMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Login';
             }
         });
     </script>
